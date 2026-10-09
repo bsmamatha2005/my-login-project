@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Login Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <div class="brand-mark" aria-hidden="true">✦</div>
+    <h1>Welcome</h1>
+    <p class="subtitle">Sign in to continue to your account</p>
+
+    <section id="auth-panel">
+      <div class="tabs">
+        <button id="login-tab" class="tab active" type="button">Login</button>
+        <button id="register-tab" class="tab" type="button">Create account</button>
+      </div>
+
+      <form id="login-form">
+        <label for="login-email">Email address</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" required>
+        <label for="login-password">Password</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Login</button>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <label for="register-name">Full name</label>
+        <input id="register-name" name="name" maxlength="80" autocomplete="name" required>
+        <label for="register-email">Email address</label>
+        <input id="register-email" name="email" type="email" autocomplete="email" required>
+        <label for="register-password">Password (minimum 8 characters)</label>
+        <input id="register-password" name="password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        <button class="primary" type="submit">Create account</button>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="success-icon">✓</div>
+      <h2>You're logged in!</h2>
+      <p id="profile-text"></p>
+      <button id="logout-button" class="secondary" type="button">Log out</button>
+    </section>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <p class="footnote">Demo project · Never reuse your real password here.</p>
+  </main>
+</body>
+</html>

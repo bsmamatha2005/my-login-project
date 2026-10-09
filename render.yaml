@@ -1,0 +1,17 @@
+# Optional Render Blueprint reference.
+# You can also create the service manually using README.md.
+services:
+  - type: web
+    name: my-login-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
